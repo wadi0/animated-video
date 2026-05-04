@@ -34,7 +34,7 @@ body {
 }
 
 .man-character {
-    height: 72vh;
+    height: 60vh;
     width: auto;
     filter: drop-shadow(0 20px 30px rgba(0,0,0,0.4));
     display: block;

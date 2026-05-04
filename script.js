@@ -48,39 +48,23 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 console.log('Flying cards onto man...');
                 
-                // Calculate landing spot on man
+                // Calculate landing spot above man
                 const manRect = manWrapper.getBoundingClientRect();
                 const landX = manRect.left + (manRect.width / 2) - 140; 
-                const landY = manRect.top - 50; 
 
                 cards.forEach((card, i) => {
                     setTimeout(() => {
                         card.style.transition = 'all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
                         card.style.left = landX + 'px';
-                        card.style.top = landY + 'px';
+                        card.style.top = (manRect.top - 220) + 'px'; // Raised slightly higher
                         card.style.opacity = '1';
                         card.style.transform = `rotate(${(i - 4) * 5}deg)`;
                         card.style.zIndex = 100 + i;
 
-                        // Final step after last card lands
-                        if (i === cards.length - 1) {
-                            setTimeout(() => {
-                                console.log('Phase 3: Removing cards and changing man image...');
-                                
-                                // Fade out cards
-                                cards.forEach(c => {
-                                    c.style.transition = 'all 0.8s ease';
-                                    c.style.opacity = '0';
-                                    c.style.transform = 'translateY(-100px) scale(0.1)';
-                                });
-
-                                // Change man image
-                                setTimeout(() => {
-                                    manImg.src = 'man-2.png';
-                                    console.log('Man image changed to man-2.png');
-                                }, 800);
-
-                            }, 3000); // Wait 3 seconds after last card lands
+                        // Change man image when the second card starts coming
+                        if (i === 1) {
+                            manImg.src = 'man-2.png';
+                            console.log('Man image changed to man-2.png on second card');
                         }
 
                     }, i * 600);
