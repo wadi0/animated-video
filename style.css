@@ -69,6 +69,10 @@ body {
 .card-6 { top: 30%; right: 3%;  animation-name: flyFromRight; animation-delay: 2.8s; }
 .card-7 { top: 55%; right: 3%;  animation-name: flyFromRight; animation-delay: 3.3s; }
 .card-8 { top: 58%; left: 3%;   animation-name: flyFromLeft;  animation-delay: 3.8s; }
+.card-9 { top: 15%; left: 15%;  animation-name: flyFromTop;   animation-delay: 4.1s; }
+.card-10 { top: 15%; right: 15%; animation-name: flyFromTop;   animation-delay: 4.4s; }
+.card-11 { top: 75%; left: 15%;  animation-name: flyFromLeft;  animation-delay: 4.7s; }
+.card-12 { top: 75%; right: 15%; animation-name: flyFromRight; animation-delay: 5.0s; }
 
 /* === Phase 1 Keyframes === */
 @keyframes flyFromLeft {
