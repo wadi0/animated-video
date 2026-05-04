@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setManCenter();
 
     // PHASE 2 starts after 5 seconds of "resting"
-    // Phase 1 (CSS) takes ~5s, so we wait 5s + 5s = 10s total
-    const phase2Delay = 10000; 
+    // Phase 1 (CSS) takes ~5s, so we wait 5s + 3s = 8s total
+    const phase2Delay = 8000; 
 
     setTimeout(() => {
         console.log('Phase 2 starting...');
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Calculate landing spot on man
                 const manRect = manWrapper.getBoundingClientRect();
-                const landX = manRect.left + (manRect.width / 2) - 95; 
+                const landX = manRect.left + (manRect.width / 2) - 140; 
                 const landY = manRect.top - 50; 
 
                 cards.forEach((card, i) => {
